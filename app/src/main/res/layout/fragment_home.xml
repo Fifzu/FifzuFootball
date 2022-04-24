@@ -24,7 +24,7 @@
             android:id="@+id/textview_page"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1 von 4"
+            android:text="1 von 5"
             android:layout_centerHorizontal="true"
             />
 

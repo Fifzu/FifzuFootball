@@ -33,11 +33,13 @@ public class SettingsFragment extends Fragment {
         final TextInputLayout spielplan2 = root.findViewById(R.id.spielplan2);
         final TextInputLayout spielplan3 = root.findViewById(R.id.spielplan3);
         final TextInputLayout spielplan4 = root.findViewById(R.id.spielplan4);
+        final TextInputLayout spielplan5 = root.findViewById(R.id.spielplan5);
 
         spielplan1.getEditText().setText(((MainActivity)getActivity()).spielplan1);
         spielplan2.getEditText().setText(((MainActivity)getActivity()).spielplan2);
         spielplan3.getEditText().setText(((MainActivity)getActivity()).spielplan3);
         spielplan4.getEditText().setText(((MainActivity)getActivity()).spielplan4);
+        spielplan5.getEditText().setText(((MainActivity)getActivity()).spielplan5);
 
 
         spielplan1.getEditText().getText();
@@ -49,6 +51,7 @@ public class SettingsFragment extends Fragment {
                 ((MainActivity)getActivity()).spielplan2 = spielplan2.getEditText().getText().toString();
                 ((MainActivity)getActivity()).spielplan3 = spielplan3.getEditText().getText().toString();
                 ((MainActivity)getActivity()).spielplan4 = spielplan4.getEditText().getText().toString();
+                ((MainActivity)getActivity()).spielplan5 = spielplan5.getEditText().getText().toString();
                 ((MainActivity)getActivity()).saveSpielplane();
 
                 Toast toast = Toast.makeText(getContext(), "Saved!", Toast.LENGTH_SHORT);

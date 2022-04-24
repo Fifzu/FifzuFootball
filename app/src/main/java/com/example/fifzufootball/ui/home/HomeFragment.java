@@ -27,8 +27,6 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     WebView webView1;
-    WebView webView2;
-    WebView webView3;
     int page;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -38,7 +36,7 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
       //  final TextView textView = root.findViewById(R.id.text_home);
 
-        String[] spielplaene = {((MainActivity)getActivity()).spielplan1.replace(" ","+"),((MainActivity)getActivity()).spielplan2.replace(" ","+"),((MainActivity)getActivity()).spielplan3.replace(" ","+"),((MainActivity)getActivity()).spielplan4.replace(" ","+")};
+        String[] spielplaene = {((MainActivity)getActivity()).spielplan1.replace(" ","+"),((MainActivity)getActivity()).spielplan2.replace(" ","+"),((MainActivity)getActivity()).spielplan3.replace(" ","+"),((MainActivity)getActivity()).spielplan4.replace(" ","+"),((MainActivity)getActivity()).spielplan5.replace(" ","+")};
         page=0;
         webView1 = (WebView) root.findViewById(R.id.web_view1);
         TextView textview_page = root.findViewById(R.id.textview_page);
@@ -70,10 +68,10 @@ public class HomeFragment extends Fragment {
 
                 page -= 1;
                 if(page==-1){
-                    page=3;
+                    page=4;
                 }
                 webView1.loadUrl("https://www.google.com/search?q=spielplan+"+spielplaene[page]);
-                textview_page.setText((page + 1) + " von 4");
+                textview_page.setText((page + 1) + " von 5");
             }
         });
 
@@ -82,15 +80,13 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
 
                 page += 1;
-                if(page==4){
+                if(page==5){
                     page=0;
                 }
                 webView1.loadUrl("https://www.google.com/search?q=spielplan+"+spielplaene[page]);
-                textview_page.setText((page + 1) + "von 4");
+                textview_page.setText((page + 1) + " von 5");
             }
         });
-
-
 
         return root;
     }
@@ -99,9 +95,6 @@ public class HomeFragment extends Fragment {
         super.onAttach(context);
         if (context instanceof Activity){
             this.listener = (FragmentActivity) context;
-
-
-
         }
     }
 

@@ -10,7 +10,7 @@ public class SlideshowViewModel extends ViewModel {
 
     public SlideshowViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Fifzu Football 2021");
+        mText.setValue("Fifzu Football 2022");
     }
 
     public LiveData<String> getText() {

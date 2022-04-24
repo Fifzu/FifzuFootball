@@ -31,6 +31,7 @@
             />
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/spielplan3"
         android:layout_width="match_parent"
@@ -41,8 +42,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
-
-
 
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
@@ -55,13 +54,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
-
-        <Button
-            android:id="@+id/button_id"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="speichern" />
-
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/spielplan5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Spielplan 5">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button_id"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="speichern" />
 </LinearLayout>

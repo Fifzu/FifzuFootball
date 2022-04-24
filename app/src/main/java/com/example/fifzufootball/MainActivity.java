@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     public String spielplan2;
     public String spielplan3;
     public String spielplan4;
+    public String spielplan5;
     public SharedPreferences sharedPref;
 
     @Override
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         spielplan2 = sharedPref.getString("spielplan2","primera division");
         spielplan3 = sharedPref.getString("spielplan3","serie a");
         spielplan4 = sharedPref.getString("spielplan4","champions league");
+        spielplan5 = sharedPref.getString("spielplan5","league 1");
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -73,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         editor.putString("spielplan2",(String) spielplan2);
         editor.putString("spielplan3",(String) spielplan3);
         editor.putString("spielplan4",(String) spielplan4);
+        editor.putString("spielplan5",(String) spielplan5);
         editor.apply();
     }
 
