@@ -1,4 +1,4 @@
-package com.example.fifzufootball.ui.home;
+package com.fifzu.fifzufootball.ui.home;
 
 import android.webkit.CookieManager;
 import android.webkit.WebView;

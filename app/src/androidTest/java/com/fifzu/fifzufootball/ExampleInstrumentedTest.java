@@ -1,4 +1,4 @@
-package com.example.fifzufootball;
+package com.fifzu.fifzufootball;
 
 import android.content.Context;
 

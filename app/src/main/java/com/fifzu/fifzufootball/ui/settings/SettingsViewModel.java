@@ -1,16 +1,16 @@
-package com.example.fifzufootball.ui.slideshow;
+package com.fifzu.fifzufootball.ui.settings;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel {
+public class SettingsViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SlideshowViewModel() {
+    public SettingsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Fifzu Football 2022");
+        mText.setValue("This is gallery fragment");
     }
 
     public LiveData<String> getText() {

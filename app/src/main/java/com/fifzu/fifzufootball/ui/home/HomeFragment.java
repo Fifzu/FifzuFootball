@@ -1,4 +1,4 @@
-package com.example.fifzufootball.ui.home;
+package com.fifzu.fifzufootball.ui.home;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,20 +12,21 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.fifzufootball.MainActivity;
-import com.example.fifzufootball.R;
+import com.fifzu.fifzufootball.MainActivity;
+import com.fifzu.fifzufootball.R;
+
+import java.util.List;
 
 public class HomeFragment extends Fragment {
 
     FragmentActivity listener;
 
     private HomeViewModel homeViewModel;
+    private List<String> spielplanList;
     WebView webView1;
     int page;
 
@@ -36,11 +37,12 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
       //  final TextView textView = root.findViewById(R.id.text_home);
 
-        String[] spielplaene = {((MainActivity)getActivity()).spielplan1.replace(" ","+"),((MainActivity)getActivity()).spielplan2.replace(" ","+"),((MainActivity)getActivity()).spielplan3.replace(" ","+"),((MainActivity)getActivity()).spielplan4.replace(" ","+"),((MainActivity)getActivity()).spielplan5.replace(" ","+")};
+        spielplanList = ((MainActivity)getActivity()).getSpielplanList();
+
+    //    String[] spielplaene = {((MainActivity)getActivity()).spielplan1.replace(" ","+"),((MainActivity)getActivity()).spielplan2.replace(" ","+"),((MainActivity)getActivity()).spielplan3.replace(" ","+"),((MainActivity)getActivity()).spielplan4.replace(" ","+"),((MainActivity)getActivity()).spielplan5.replace(" ","+")};
         page=0;
         webView1 = (WebView) root.findViewById(R.id.web_view1);
         TextView textview_page = root.findViewById(R.id.textview_page);
-
 
         if (savedInstanceState != null) {
             webView1.restoreState(savedInstanceState);
@@ -59,8 +61,7 @@ public class HomeFragment extends Fragment {
         }
 
         webView1.setWebViewClient(new MyWebViewClient());
-        webView1.loadUrl("https://www.google.com/search?q=spielplan+"+spielplaene[0]);
-
+        webView1.loadUrl("https://www.google.com/search?q=spielplan+"+ getSpielplanReplaced(0));
 
         final Button left = root.findViewById(R.id.button_left);
         left.setOnClickListener(new View.OnClickListener() {
@@ -68,10 +69,10 @@ public class HomeFragment extends Fragment {
 
                 page -= 1;
                 if(page==-1){
-                    page=4;
+                    page = spielplanList.size() - 1;
                 }
-                webView1.loadUrl("https://www.google.com/search?q=spielplan+"+spielplaene[page]);
-                textview_page.setText((page + 1) + " von 5");
+                webView1.loadUrl("https://www.google.com/search?q=spielplan+"+getSpielplanReplaced(page));
+                textview_page.setText((page + 1) + " von "+ spielplanList.size());
             }
         });
 
@@ -80,11 +81,11 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
 
                 page += 1;
-                if(page==5){
+                if(page==spielplanList.size()){
                     page=0;
                 }
-                webView1.loadUrl("https://www.google.com/search?q=spielplan+"+spielplaene[page]);
-                textview_page.setText((page + 1) + " von 5");
+                webView1.loadUrl("https://www.google.com/search?q=spielplan+"+getSpielplanReplaced(page));
+                textview_page.setText((page + 1) + " von "+ spielplanList.size());
             }
         });
 
@@ -96,6 +97,11 @@ public class HomeFragment extends Fragment {
         if (context instanceof Activity){
             this.listener = (FragmentActivity) context;
         }
+    }
+
+    private String getSpielplanReplaced(int index){
+        String spielplanReplaced = spielplanList.get(index).replace(" ","+");
+        return spielplanReplaced;
     }
 
 }

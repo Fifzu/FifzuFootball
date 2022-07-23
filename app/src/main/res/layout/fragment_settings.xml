@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,65 +7,21 @@
     tools:context=".ui.home.HomeFragment">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/spielplan1"
+        android:id="@+id/spielplan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Spielplan 1">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/spielplan2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Spielplan 2">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/spielplan3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Spielplan 3">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/spielplan4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Spielplan 4">
+        android:hint="Spielplan">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/spielplan5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Spielplan 5">
 
     <com.google.android.material.textfield.TextInputEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/button_id"

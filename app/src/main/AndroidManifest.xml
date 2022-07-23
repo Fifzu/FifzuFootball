@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.fifzufootball">
+    package="com.fifzu.fifzufootball">
 
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FifzuFootball">
         <activity
-            android:name=".MainActivity"
+            android:name="com.fifzu.fifzufootball.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.FifzuFootball.NoActionBar">
             <intent-filter>
