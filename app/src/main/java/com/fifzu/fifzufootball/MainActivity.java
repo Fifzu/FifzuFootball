@@ -37,11 +37,11 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         viewModel = new ViewModelProvider(this).get(HomeViewModel.class);
-        viewModel.getSpielplaene().observe(this, item -> {
-            // Perform an action with the latest item data
-        });
+
 
         List<String> spielplanList=new ArrayList<String>();
+
+
         defaultSpielplanList=new ArrayList<>();
 
         defaultSpielplanList.add("premier league");
@@ -51,16 +51,18 @@ public class MainActivity extends AppCompatActivity {
         defaultSpielplanList.add("league 1");
 
         sharedPref = getPreferences(Context.MODE_PRIVATE);
-        anzahlSpielplaene = sharedPref.getInt("anzahlSpielplaene",5);
+        anzahlSpielplaene = sharedPref.getInt("anzahlSpielplaene",0);
 
-        for (int i =0;i<anzahlSpielplaene;i++)
-        {
-            if (defaultSpielplanList.size()==i) {
-                defaultSpielplanList.add("Example League");
+        if (anzahlSpielplaene== 0) {
+            anzahlSpielplaene =5;
+            for (int i =0;i<anzahlSpielplaene;i++)
+            {
+                spielplanList.add(sharedPref.getString("spielplan" + i,defaultSpielplanList.get(i)));
             }
-            spielplanList.add(sharedPref.getString("spielplan" + i,defaultSpielplanList.get(i)));
         }
-
+        else {
+            spielplanList = viewModel.getSpielplanList();
+        }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
